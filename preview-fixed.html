@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>2 Months To Us, Bebuuuu ❤️ — Fixed Preview</title>
+<style>
+  :root{
+    --bg:#07060a;
+    --panel:rgba(255,255,255,.06);
+    --stroke:rgba(255,255,255,.12);
+    --pink:#ff4f8b;
+    --pink-soft:#ffd7e4;
+    --text:rgba(255,255,255,.9);
+    --muted:rgba(255,255,255,.68);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;overflow-x:hidden;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#fff;background:
+    radial-gradient(circle at 12% 20%, rgba(255,79,139,.18), transparent 24%),
+    radial-gradient(circle at 88% 15%, rgba(255,210,228,.10), transparent 18%),
+    radial-gradient(circle at 50% 100%, rgba(255,79,139,.10), transparent 28%),
+    linear-gradient(180deg, #09070b 0%, #050409 100%)}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px);background-size:28px 28px;opacity:.22}
+  body::after{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(180deg, transparent 0%, rgba(0,0,0,.18) 100%)}
+  .scene{min-height:100vh;display:none;padding:clamp(16px,3vw,32px)}
+  .scene.active{display:flex;align-items:center;justify-content:center}
+  .frame{width:min(1200px,100%);position:relative;border:1px solid var(--stroke);border-radius:34px;background:linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.03));backdrop-filter:blur(18px) saturate(140%);box-shadow:0 30px 90px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.08);overflow:hidden}
+  .frame::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(135deg, rgba(255,79,139,.55), rgba(255,255,255,.08), rgba(255,79,139,.2));-webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+  .content{position:relative;z-index:1;padding:clamp(22px,4vw,48px)}
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;min-height:min(84vh,960px)}
+  .kicker{display:inline-flex;align-items:center;gap:.5rem;padding:.56rem .9rem;border-radius:999px;border:1px solid rgba(255,79,139,.22);background:rgba(255,79,139,.1);color:#ffd9e6;letter-spacing:.2em;text-transform:uppercase;font-size:.72rem}
+  .title{font-family:"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;letter-spacing:-.05em;line-height:.92;margin:0;text-shadow:0 0 10px rgba(255,79,139,.22), 0 0 40px rgba(255,79,139,.12), 0 8px 24px rgba(0,0,0,.55)}
+  .title.big{font-size:clamp(2.8rem,7vw,6.2rem)}
+  .title.med{font-size:clamp(2.1rem,4.4vw,3.8rem)}
+  .copy{color:var(--muted);line-height:1.9;font-size:clamp(1rem,1.2vw,1.08rem);max-width:680px}
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+  .btn{appearance:none;border:none;cursor:pointer;border-radius:999px;padding:.98rem 1.35rem;font-weight:800;letter-spacing:-.01em;color:#13070c;background:linear-gradient(135deg,#ff4f8b 0%,#ff86aa 48%,#ffd5e1 100%);box-shadow:0 12px 32px rgba(255,79,139,.24), inset 0 1px 0 rgba(255,255,255,.45);transition:transform .18s ease, box-shadow .18s ease}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 18px 40px rgba(255,79,139,.28), inset 0 1px 0 rgba(255,255,255,.5)}
+  .ghost{display:inline-flex;align-items:center;border-radius:999px;padding:.92rem 1.15rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(14px);color:#fff;font-weight:600}
+  .meta{position:absolute;left:0;right:0;bottom:0;padding:20px 20px 18px;z-index:2}
+  .label{display:inline-flex;align-items:center;gap:.5rem;padding:.54rem .88rem;border-radius:999px;background:rgba(255,79,139,.12);border:1px solid rgba(255,79,139,.22);color:#ffd9e6;letter-spacing:.16em;text-transform:uppercase;font-size:.71rem}
+  .card{position:relative;overflow:hidden;border-radius:28px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.045);box-shadow:0 18px 48px rgba(0,0,0,.28)}
+  .card img,.card video{display:block;width:100%;height:100%;object-fit:cover}
+  .card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, transparent 38%, rgba(8,7,10,.66) 100%);pointer-events:none}
+  .hero-image{aspect-ratio:4/5}
+  .subgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .timeline{display:flex;gap:16px;overflow:auto;padding-bottom:4px;scrollbar-width:thin}
+  .timeline .card{min-width:min(82vw,320px)}
+  .timeline .card img{height:260px}
+  .section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;flex-wrap:wrap}
+  .section-head p{margin:0;max-width:620px;color:var(--muted);line-height:1.8}
+  .puzzle{display:grid;grid-template-columns:repeat(2,minmax(110px,1fr));gap:14px;max-width:520px;width:100%}
+  .tile{padding:0;border:0;background:none;cursor:pointer;border-radius:24px;overflow:hidden}
+  .tile img{display:block;width:100%;aspect-ratio:1;border-radius:24px;object-fit:cover;border:1px solid rgba(255,255,255,.08);box-shadow:0 14px 36px rgba(0,0,0,.26)}
+  .puzzle-note{margin-top:16px;padding:16px;border-radius:22px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);color:var(--muted);line-height:1.8}
+  .arena{position:relative;min-height:440px;border-radius:26px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:radial-gradient(circle at top, rgba(255,79,139,.12), transparent 28%), linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01))}
+  .heart{position:absolute;border:none;cursor:pointer;border-radius:999px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;box-shadow:0 10px 26px rgba(255,79,139,.24), inset 0 1px 0 rgba(255,255,255,.22);background:linear-gradient(145deg, #ff4f8b 0%, #ff7ea6 50%, #ffd7e2 100%)}
+  .heart small{font-size:18px;line-height:1}
+  .stat{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0 14px;color:var(--muted)}
+  .meter{width:100%;height:10px;border-radius:999px;background:rgba(255,255,255,.07);overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+  .meter > div{height:100%;background:linear-gradient(90deg,#ff4f8b,#ff9abc,#ffd7e2);width:0%}
+  .letter{white-space:pre-wrap;line-height:1.9;color:rgba(255,255,255,.9);font-size:1.02rem;font-weight:500}
+  .question{font-family:"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;letter-spacing:-.05em;line-height:.94;font-size:clamp(2.1rem,4.4vw,3.7rem);margin:0}
+  .choices{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+  .choice{appearance:none;border:0;cursor:pointer;border-radius:999px;padding:.95rem 1.2rem;font-weight:800;background:rgba(255,255,255,.07);color:#fff;border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(14px);transition:transform .18s ease}
+  .choice.primary{background:linear-gradient(135deg,#ff4f8b 0%,#ffb6cd 100%);color:#16080d}
+  .choice:hover{transform:translateY(-2px)}
+  .progress{display:flex;justify-content:space-between;gap:12px;align-items:center;color:var(--muted);font-size:.88rem}
+  .letter-box{padding:24px}
+  .line{height:1px;background:linear-gradient(90deg, transparent, rgba(255,255,255,.16), transparent);margin:20px 0}
+  .marquee{overflow:hidden;white-space:nowrap;font-size:.82rem;letter-spacing:.3em;text-transform:uppercase;color:#ffd9e6;opacity:.72}
+  .marquee span{display:inline-block;padding-left:100%;animation:marquee 24s linear infinite}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+  .typing{font-family:"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.16;white-space:pre-wrap}
+  .subcopy{margin-top:18px;max-width:640px;color:var(--muted);line-height:1.9;font-size:1.02rem}
+  .scene-head{margin-bottom:16px}
+  .secret{position:fixed;left:10px;top:10px;width:18px;height:18px;opacity:0;border:0;background:transparent}
+  .overlay-hearts,.overlay-confetti{position:fixed;inset:0;pointer-events:none;z-index:40}
+  .overlay-hearts span{position:absolute;color:var(--pink);opacity:.72;animation:rise linear forwards}
+  @keyframes rise{to{transform:translateY(-120vh) rotate(360deg);opacity:0}}
+  .overlay-confetti i{position:absolute;width:8px;height:14px;border-radius:2px;animation:fall 2.5s linear forwards}
+  @keyframes fall{to{transform:translateY(106vh) rotate(720deg);opacity:0}}
+  .final-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+  .final-grid .card img{height:100%;aspect-ratio:4/3}
+  @media (max-width: 960px){
+    .hero{grid-template-columns:1fr;min-height:auto}
+    .final-grid{grid-template-columns:1fr}
+    .subgrid{grid-template-columns:1fr}
+    .timeline .card{min-width:82vw}
+    .scene{padding:14px}
+  }
+</style>
+</head>
+<body>
+<button id="secret" class="secret" aria-label="secret"></button>
+<div class="overlay-hearts" id="heartLayer"></div>
+<div class="overlay-confetti" id="confettiLayer"></div>
+<audio id="bgm" preload="none" loop></audio>
+
+<div id="intro" class="scene active">
+  <div class="frame">
+    <div class="content">
+      <div class="hero">
+        <div>
+          <div class="kicker">Two months, one story</div>
+          <div class="line"></div>
+          <div class="typing" id="type">Hey Bebuuuu ❤️</div>
+          <p class="subcopy">A tender little world made for the person who turns every ordinary moment into something warm, luminous, and worth holding close.</p>
+          <div class="actions">
+            <button class="btn" id="beginBtn">Begin Our Story ✨</button>
+            <div class="ghost">Made with love, not templates</div>
+          </div>
+          <div class="marquee" style="margin-top:28px"><span>i love you · i love you · i love you · i love you · i love you</span></div>
+        </div>
+        <div class="card hero-image">
+          <img src="src/assets/photos/photo1.jpeg" alt="intro" />
+          <div class="meta">
+            <div class="label">Hello, my favorite person</div>
+            <div style="height:10px"></div>
+            <div style="font-family:Georgia,serif;font-size:clamp(1.35rem,2.4vw,1.9rem);font-weight:600;line-height:1.45">A soft beginning to a love story that keeps getting more beautiful the longer it unfolds.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="scene1" class="scene">
+  <div class="frame"><div class="content"><div class="hero"><div><div class="kicker">Scene I · celebration</div><div class="line"></div><h1 class="title big">2 Months To Us Babruuuuuu ❤️</h1><p class="copy" style="margin-top:18px">Every day with you has been my favorite day. This should feel like a velvet-lit room where the world gets quieter and the story gets closer.</p><div class="actions"><button class="btn next" data-next="scene2">Continue</button><div class="ghost">Romantic, glowing, unforgettable</div></div></div><div class="card hero-image"><img src="src/assets/photos/photo2.jpeg" alt="celebration" /><div class="meta"><div class="label">our first photo together</div><div style="height:10px"></div><div style="font-family:Georgia,serif;font-size:clamp(1.35rem,2.4vw,1.9rem);font-weight:600;line-height:1.45">A warm opening scene with soft light and a premium glow.</div></div></div></div></div></div>
+</div>
+
+<div id="scene2" class="scene">
+  <div class="frame"><div class="content"><div class="scene-head"><div class="kicker">Scene II · memory challenge</div><div class="line"></div><div class="section-head"><div><h2 class="title med">Put the memory back together</h2><p>This should feel like a framed keepsake. Tap the tiles to swap them until the arrangement feels right.</p></div></div></div><div class="hero" style="min-height:auto;align-items:start"><div><div class="puzzle" id="puzzle"></div><div class="puzzle-note" id="puzzleMsg">Tap tiles to swap them. The goal is not to rush, but to make the arrangement feel right.</div></div><div><div class="card"><img src="src/assets/photos/photo3.jpeg" alt="puzzle side art" /><div class="meta"><div class="label">Tiny challenge</div><div style="height:10px"></div><div style="font-family:Georgia,serif;font-size:clamp(1.2rem,2vw,1.7rem);font-weight:600;line-height:1.55">A solved memory should feel like a soft confetti moment, not a noisy mini-game.</div></div></div><div id="scene2Solved" class="actions" style="display:none"><button class="btn next" data-next="scene3">See Our Moments</button></div></div></div></div></div>
+</div>
+
+<div id="scene3" class="scene">
+  <div class="frame"><div class="content"><div class="scene-head"><div class="kicker">Scene III · timeline</div><div class="line"></div><div class="section-head"><div><h2 class="title med">Moments that became music</h2><p>A horizontal gallery that feels like walking through the best parts of us, one soft memory at a time.</p></div></div></div><div class="timeline" id="timeline"></div><div class="actions"><button class="btn next" data-next="scene4">One More Challenge ❤️</button></div></div></div>
+</div>
+
+<div id="scene4" class="scene">
+  <div class="frame"><div class="content"><div class="scene-head"><div class="kicker">Scene IV · heart catching</div><div class="line"></div><div class="section-head"><div><h2 class="title med">Catch the love before it floats away</h2><p>Tap the hearts as they drift through the scene. The motion should feel dreamy and deliberate, not random and messy.</p></div></div></div><div class="hero" style="min-height:auto;align-items:start"><div><div class="stat"><span>Hearts collected</span><strong><span id="count">0</span>/15</strong></div><div class="meter"><div id="meter"></div></div><div style="height:12px"></div><div class="arena" id="sky"></div><div class="puzzle-note" id="heartMsg">Catch 15 hearts to unlock the next message.</div><div class="actions"><button class="btn next" data-next="scene5" id="scene4Solved" style="display:none">Read My Heart</button></div></div><div><div class="card"><img src="src/assets/photos/photo4.jpeg" alt="heart scene" /><div class="meta"><div class="label">Soft motion</div><div style="height:10px"></div><div style="font-family:Georgia,serif;font-size:clamp(1.2rem,2vw,1.7rem);font-weight:600;line-height:1.55">The game should feel calm, affectionate, and impossible to hate.</div></div></div></div></div></div></div>
+</div>
+
+<div id="scene5" class="scene">
+  <div class="frame"><div class="content"><div class="scene-head"><div class="kicker">Scene V · love letter</div><div class="line"></div><div class="section-head"><div><h2 class="title med">A love letter, written slowly</h2><p>The text appears like a private note being revealed line by line. The typography should carry the emotion.</p></div></div></div><div class="hero" style="min-height:auto;align-items:start"><div><p class="subcopy" style="margin-top:0">This is the part that should feel intimate rather than showy.</p><div class="actions"><button class="btn next" data-next="scene6" id="scene5Solved">One Last Surprise</button></div></div><div class="card letter-box"><div class="label">Dear Bebuuuu</div><div style="height:16px"></div><pre class="letter" id="letter"></pre></div></div></div></div>
+</div>
+
+<div id="scene6" class="scene">
+  <div class="frame"><div class="content"><div class="scene-head"><div class="kicker">Scene VI · questions</div><div class="line"></div><div class="section-head"><div><h2 class="title med">Tiny questions, huge feelings</h2><p>The answers should drift closer, not sit stiffly like boring buttons. Make them playful and hard to ignore.</p></div></div></div><div class="hero" style="min-height:auto;align-items:center"><div><h2 class="question" id="question">Do you love me? ❤️</h2><div class="choices" id="choices"></div><div class="actions"><button class="btn next" data-next="scene7" id="scene6Solved" style="display:none">Final Message</button></div></div><div><div class="card"><img src="src/assets/photos/photo5.png" alt="questions" /><div class="meta"><div class="label">Playfully impossible to avoid</div><div style="height:10px"></div><div style="font-family:Georgia,serif;font-size:clamp(1.2rem,2vw,1.7rem);font-weight:600;line-height:1.55">The buttons should feel alive, like they know what answer they want.</div></div></div></div></div></div></div>
+</div>
+
+<div id="scene7" class="scene">
+  <div class="frame"><div class="content"><div class="scene-head"><div class="kicker">Scene VII · the message</div><div class="line"></div><div class="section-head"><div><h2 class="title med">A message from me to you ❤️</h2><p>The video should sit like a premiere frame, glowing softly in the middle of the page.</p></div></div></div><div class="hero" style="min-height:auto;align-items:start"><div><p class="subcopy" style="margin-top:0">This is the final reveal before the ending.</p><div class="actions"><button class="btn next" data-next="final">Finish Our Journey</button></div></div><div class="card"><video id="video" controls playsinline style="width:100%;aspect-ratio:16/9;background:#000"></video><div style="padding:14px 16px 18px;text-align:center;color:var(--muted)">Everything I couldn't fit into words.</div></div></div></div></div>
+</div>
+
+<div id="final" class="scene">
+  <div class="frame"><div class="content"><div class="kicker">Final scene · forever</div><div class="line"></div><div class="copy" style="text-align:center;margin-bottom:16px">2 Months To Us ❤️</div><h1 class="title big" style="text-align:center">I Love You Bebuuuu ❤️</h1><p class="copy" style="text-align:center;max-width:760px;margin:18px auto 0">And countless more memories to come. Thank you for being my favorite person. Forever your idiot ❤️</p><div class="final-grid" id="finalGrid"></div></div></div>
+</div>
+
+<div id="secretScene" class="scene">
+  <div class="frame"><div class="content" style="min-height:72vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center"><div class="kicker">Secret surprise</div><div class="line"></div><h1 class="title med">Proud of you, Bebuuuu ❤️</h1><p class="copy" style="margin-top:18px">Thank you for choosing me every day.</p></div></div>
+</div>
+
+<script>
+const scenes = ['intro','scene1','scene2','scene3','scene4','scene5','scene6','scene7','final','secretScene']
+const assets = ['src/assets/photos/photo1.jpeg','src/assets/photos/photo2.jpeg','src/assets/photos/photo3.jpeg','src/assets/photos/photo4.jpeg','src/assets/photos/photo5.png','src/assets/photos/photo6.jpeg']
+const show = (id)=>{ scenes.forEach(s=>document.getElementById(s).classList.remove('active')); document.getElementById(id).classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}) }
+
+// Intro typing - clean lines instead of partial broken state
+const typeEl = document.getElementById('type')
+const lines = ['Hey Bebuuuu ❤️',"Today isn't just another day...",'It\'s been 2 amazing months with you.','And I made something special for you.','Ready?']
+let lineTimer = null
+let charTimer = null
+function typeLine(lineIndex){
+  if(lineIndex >= lines.length) return
+  const line = lines[lineIndex]
+  let charIndex = 1
+  typeEl.textContent = line.slice(0, 1)
+  charTimer = setInterval(()=>{
+    charIndex += 1
+    typeEl.textContent = line.slice(0, charIndex)
+    if(charIndex >= line.length){
+      clearInterval(charTimer)
+      lineTimer = setTimeout(()=> typeLine(lineIndex + 1), 680)
+    }
+  }, 42)
+}
+typeLine(0)
+
+document.getElementById('beginBtn').onclick = ()=> { const bgm = document.getElementById('bgm'); if(!bgm.src) bgm.src = 'src/assets/music/Tum Se Hi Jab We Met 320 Kbps.mp3'; bgm.play().catch(()=>{}); show('scene1') }
+document.querySelectorAll('.next').forEach(btn=> btn.onclick = ()=> show(btn.dataset.next))
+
+// Build timeline cards
+const timeline = document.getElementById('timeline')
+const moments = [
+  ['Our first hangout together','The moment the story started feeling real.',assets[0]],
+  ['Our first photo together','The first proof that this could become forever.',assets[1]],
+  ['First time holding hands','Soft, nervous, unforgettable.',assets[2]],
+  ['A beautiful memory','One of those moments that lives in the heart longer than in the camera roll.',assets[3]],
+  ['Our first movie together','Lights down, hearts up.',assets[4]],
+  ['Us together','The best frame is always the two of us side by side.',assets[5]]
+]
+moments.forEach(([t,d,img])=>{
+  const c = document.createElement('div')
+  c.className = 'card'
+  c.innerHTML = `<img src="${img}" alt="${t}"><div class="meta"><div class="label">${t}</div><div style="height:10px"></div><div style="font-family:Georgia,serif;font-size:1.25rem;font-weight:600;line-height:1.55">${d}</div></div>`
+  timeline.appendChild(c)
+})
+
+// Puzzle - much cleaner and with a clear solved state
+let board = shuffle(assets.slice(0,4))
+const puzzle = document.getElementById('puzzle')
+const puzzleMsg = document.getElementById('puzzleMsg')
+const scene2Solved = document.getElementById('scene2Solved')
+function shuffle(arr){ return arr.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]) }
+function renderPuzzle(){
+  puzzle.innerHTML = ''
+  board.forEach((src, idx)=>{
+    const b = document.createElement('button')
+    b.className = 'tile'
+    b.innerHTML = `<img src="${src}" alt="memory tile ${idx+1}">`
+    b.onclick = ()=>{
+      const next = (idx + 1) % board.length
+      ;[board[idx], board[next]] = [board[next], board[idx]]
+      renderPuzzle(); checkPuzzle()
+    }
+    puzzle.appendChild(b)
+  })
+}
+function burst(type='confetti'){
+  const layer = document.getElementById(type === 'confetti' ? 'confettiLayer' : 'heartLayer')
+  layer.innerHTML = ''
+  for(let i=0;i<42;i++){
+    const el = document.createElement(type === 'confetti' ? 'i' : 'span')
+    if(type === 'confetti'){
+      el.style.left = Math.random()*100 + '%'
+      el.style.top = '-16px'
+      el.style.background = ['#ff4f8b','#ffd1e0','#fff0f6','#ffb0c9'][Math.floor(Math.random()*4)]
+      el.animate([{transform:'translateY(0) rotate(0deg)',opacity:1},{transform:'translateY(105vh) rotate(720deg)',opacity:0}],{duration:2200+Math.random()*800,iterations:1,easing:'linear'})
+      setTimeout(()=>el.remove(),3200)
+    } else {
+      el.textContent = '❤️'
+      el.style.left = Math.random()*100 + '%'
+      el.style.top = '110vh'
+      el.style.fontSize = (12 + Math.random()*20) + 'px'
+      el.animate([{transform:'translateY(0) rotate(0deg)',opacity:.85},{transform:'translateY(-120vh) rotate(360deg)',opacity:0}],{duration:4600+Math.random()*1500,iterations:1,easing:'linear'})
+      setTimeout(()=>el.remove(),6200)
+    }
+    layer.appendChild(el)
+  }
+}
+function checkPuzzle(){
+  if(board.join(',') === assets.slice(0,4).join(',')){
+    puzzleMsg.innerHTML = '<strong style="color:#fff">Solved.</strong> Just like these memories, everything feels complete with you.'
+    scene2Solved.style.display = 'inline-flex'
+    burst('confetti')
+  }
+}
+renderPuzzle()
+
+// Heart game - better UX: a bounded arena, larger hit targets, clearer progress, fewer random frustrations
+const sky = document.getElementById('sky')
+const countEl = document.getElementById('count')
+const meter = document.getElementById('meter')
+const heartMsg = document.getElementById('heartMsg')
+const scene4Solved = document.getElementById('scene4Solved')
+let count = 0
+const activeHearts = new Set()
+function spawnHeart(){
+  const heart = document.createElement('button')
+  heart.className = 'heart'
+  const size = 42 + Math.random()*18
+  heart.style.width = size + 'px'
+  heart.style.height = size + 'px'
+  heart.style.left = Math.random() * 86 + '%'
+  heart.style.top = '-60px'
+  heart.innerHTML = '<small>❤️</small>'
+  const duration = 4200 + Math.random()*1800
+  const drift = (Math.random()*26 - 13)
+  sky.appendChild(heart)
+  activeHearts.add(heart)
+  heart.animate([
+    { transform:'translate3d(0,0,0) rotate(0deg)', opacity:1 },
+    { transform:`translate3d(${drift}px, 500px, 0) rotate(${Math.random()*220 - 110}deg)`, opacity:1 }
+  ], { duration, iterations:1, easing:'linear' })
+  heart.onclick = ()=>{
+    if(!activeHearts.has(heart)) return
+    activeHearts.delete(heart)
+    heart.remove()
+    count += 1
+    countEl.textContent = count
+    meter.style.width = Math.min(100, (count/15)*100) + '%'
+    if(count >= 15){
+      heartMsg.innerHTML = '<strong style="color:#fff">Completed.</strong> You\'ve successfully collected all the love I have for you ❤️'
+      scene4Solved.style.display = 'inline-flex'
+      burst('heart')
+      burst('confetti')
+      clearInterval(heartTimer)
+    }
+  }
+  setTimeout(()=>{
+    if(activeHearts.has(heart)){
+      activeHearts.delete(heart)
+      heart.remove()
+    }
+  }, duration + 200)
+}
+const heartTimer = setInterval(spawnHeart, 760)
+
+// Letter typing
+const letter = `So so so mere bebuuuuuuuuuuuuu meriiiiiiii jaaannnnn mera jigar
+Mo premaaaaaaaaa mo jeeevanaaaaaa mo waifuuuuuuu
+2 months innn meriiiiiiii jaaannnnn and happiest 2 months of my life kyaaa majaaa aaa rahaa haiii.
+Aisa waifuuuuuuuuuuuuuuuuuu milaa haiii mujheee jooo itnaaa caring itnaa jyadaa aahhhh iloveeeeuuuuuuuuuuuuuouuuuuuuuuuuuuuu
+Eachh and every dayyy i loveyouuuuuuuuuuuuuu moreee merii jaaannnnn.
+I don't know kitna express kar pata hunnnn aaapkoo
+Buttt itnaaa boll sakta hunn laillaaa majnu ek dusre se itna pyaar nahi Kiya hoga jitna mai aapse karta huuuu meriiiiiiii jaaannnnn.
+I ammmm misiiing youuuu so muchhhhhhhhh meriiiii jaaannnn pureee dinnn bas bebu bebuuuuuuuuuuuuu bebuuuuuuuuuuuu babruuuuuuuuuuuuuuuuuuu jalebuuuu bebuuuuuuuuuuuuu chaltaa haiii dill aur dimakkk me kab meree paas aa Jaye meri jaaannnnn kabb galeee laga lunnn.
+2 mahine ho gaye hein atleast 80*12 more to go meriiiiiiii jaaannnnn hehehehehehehehehehehheheh
+Bebduuuuuuuuuuuuuuuuuu hasteeeee rahaaa karooo khushhhh ekdummmm.
+Kuchhh bhii hooo aapkaa marddd haiii yhnnn parrr sabb handle kar lega merii jaaannnnn hehehehehehehehehehehheheh iloveeeeuuuuuuuuuuuuuouuuuuuuuuuuuuuu iloveeeeuuuuuuuuuuuuuouuuuuuuuuuuuuuu iloveeeeuuuuuuuuuuuuuouuuuuuuuuuuuuuu ssoososososososososososo muchhhhhhhhh bebduuuuuuuuuuuuuuuuuu
+Merii Jaaannnnn`
+let li2 = 0
+let letterStarted = false
+function typeLetter(){
+  if(li2 > letter.length) return
+  document.getElementById('letter').textContent = letter.slice(0, li2)
+  li2++
+  setTimeout(typeLetter, 16)
+}
+const obs5 = new MutationObserver(()=>{
+  if(document.getElementById('scene5').classList.contains('active') && !letterStarted){
+    letterStarted = true
+    typeLetter()
+  }
+})
+obs5.observe(document.getElementById('scene5'), { attributes:true, attributeFilter:['class'] })
+
+// Questions
+const questions = [
+  ['Do you love me? ❤️', ['Yes', 'Definitely Yes']],
+  ['Will you keep making memories with me? ❤️', ['Of course', 'Obviously']],
+  ['Will you marry me someday? 💍', ['Yes', 'Absolutely Yes']]
+]
+let qi = 0
+const question = document.getElementById('question')
+const choices = document.getElementById('choices')
+const scene6Solved = document.getElementById('scene6Solved')
+function renderQuestion(){
+  if(qi >= questions.length){
+    question.textContent = '❤️'
+    choices.innerHTML = ''
+    scene6Solved.style.display = 'inline-flex'
+    burst('confetti')
+    return
+  }
+  const [q, opts] = questions[qi]
+  question.textContent = q
+  choices.innerHTML = ''
+  opts.forEach((opt, idx)=>{
+    const b = document.createElement('button')
+    b.className = 'choice ' + (idx === 0 ? 'primary' : '')
+    b.textContent = opt
+    b.onclick = ()=>{ qi++; renderQuestion() }
+    choices.appendChild(b)
+  })
+}
+const obs6 = new MutationObserver(()=>{
+  if(document.getElementById('scene6').classList.contains('active')){
+    qi = 0
+    renderQuestion()
+  }
+})
+obs6.observe(document.getElementById('scene6'), { attributes:true, attributeFilter:['class'] })
+
+// Final scene content
+const finalGrid = document.getElementById('finalGrid')
+assets.forEach(src=>{
+  const c = document.createElement('div')
+  c.className = 'card'
+  c.innerHTML = `<img src="${src}" alt="final memory">`
+  finalGrid.appendChild(c)
+})
+
+// Safe fallback video card - no broken asset request
+const video = document.getElementById('video')
+const videoFallback = `data:video/mp4;base64,` // intentionally empty; we avoid making a broken asset request
+video.poster = assets[2]
+video.src = 'src/assets/videos/WhatsApp Video 2026-05-29 at 23.32.55.mp4'
+video.insertAdjacentHTML('afterend', '<div style="padding:12px 16px 4px;color:rgba(255,255,255,.68);text-align:center">Your uploaded video is now loaded for the final message.</div>')
+
+// Secret surprise
+document.getElementById('secret').onclick = ()=> show('secretScene')
+
+// Navigation buttons on solved scenes
+const solvedButtons = [scene2Solved, scene4Solved, scene5Solved, scene6Solved]
+document.getElementById('scene5Solved').onclick = ()=> show('scene6')
+
+document.getElementById('scene2Solved').onclick = ()=> show('scene3')
+document.getElementById('scene4Solved').onclick = ()=> show('scene5')
+
+// Final buttons
+scene2Solved.addEventListener('click', ()=> show('scene3'))
+scene4Solved.addEventListener('click', ()=> show('scene5'))
+scene6Solved.addEventListener('click', ()=> show('scene7'))
+
+// Intro button
+show('intro')
+</script>
+</body>
+</html>
